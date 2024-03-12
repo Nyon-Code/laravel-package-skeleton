@@ -1,0 +1,43 @@
+{
+  "name": "nyoncode/laravel-package-skeleton",
+  "description": "Package Description",
+  "keywords": ["laravel", "package", "skeleton", "nyoncode"],
+  "homepage": "https://github.com/Nyon-Code/laravel-package-skeleton",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Ondřej Nyklíček",
+      "email": "ondrejnyklicek@icloud.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.1|^8.2|^8.3",
+    "illuminate/support": "^10.30",
+    "illuminate/console": "^10.30"
+  },
+  "require-dev": {
+
+  },
+  "autoload": {
+    "psr-4": {
+      "Vendor\\LaralvePackageSkeleton\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Vendor\\LaralvePackageSkeleton\\Tests\\": "tests"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Vendor\\LaralvePackageSkeleton\\"
+      ]
+    }
+  }
+}

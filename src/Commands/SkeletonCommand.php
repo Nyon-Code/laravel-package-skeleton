@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\LaralvePackageSkeleton\Commands;
+namespace Vendor\LaravelPackageSkeleton\Commands;
 
 use Illuminate\Console\Command;
 
@@ -46,6 +46,6 @@ class SkeletonCommand extends Command
      */
     public function handle(): void
     {
-        $this->info('Hello world');
+        $this->info(string: 'Hello world');
     }
 }

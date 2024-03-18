@@ -21,13 +21,16 @@
 
   },
   "autoload": {
+    "files": [
+      "src/helpers.php"
+    ],
     "psr-4": {
-      "Vendor\\LaralvePackageSkeleton\\": "src"
+      "Vendor\\LaravelPackageSkeleton\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Vendor\\LaralvePackageSkeleton\\Tests\\": "tests"
+      "Vendor\\LaravelPackageSkeleton\\Tests\\": "tests"
     }
   },
   "config": {

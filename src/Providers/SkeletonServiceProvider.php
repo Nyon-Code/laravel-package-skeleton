@@ -2,6 +2,7 @@
 
 namespace Vendor\LaravelPackageSkeleton\Providers;
 
+use Composer\InstalledVersions;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\Console\AboutCommand;
 use Vendor\LaravelPackageSkeleton\Commands\SkeletonCommand;
@@ -36,6 +37,7 @@ class SkeletonServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(path: __DIR__.'/../../routes/routes.php');
         $this->loadTranslationsFrom(path: __DIR__.'/../../lang', namespace: 'laravel-package-skeleton');
         $this->loadJsonTranslationsFrom(path: __DIR__.'/../../lang');
+        $this->loadViewsFrom(path: __DIR__.'/../../resources/views', namespace: 'laravel-package-skeleton');
 
         /**
          * Return package information in about
@@ -43,9 +45,11 @@ class SkeletonServiceProvider extends ServiceProvider
          * ---
          * php artisan about
          */
-        AboutCommand::add( section: 'Package name', data: [
-            'Version' => fn() => ini_get( option: '1.0')
-        ]);
+        if (class_exists(AboutCommand::class) && class_exists(InstalledVersions::class)) {
+            AboutCommand::add('Laravel_Package_Skeleton', [
+                'Version' => InstalledVersions::getPrettyVersion('nyoncode/laravel-package-skeleton'),
+            ]);
+        }
 
         /**
          * Determine if the application is running in the console.

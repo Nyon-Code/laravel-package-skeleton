@@ -67,7 +67,7 @@ class SkeletonServiceProvider extends ServiceProvider
          * php artisan vendor:publish --tag=skeleton_config
          */
         $this->publishes([
-            __DIR__.'/../../database/migrations' => config_path(path: 'package_name.php')
+            __DIR__.'/../../config/config.php' => config_path(path: 'package_name.php')
         ], groups: 'skeleton_config');
 
         /**
